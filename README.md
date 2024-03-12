@@ -13,16 +13,18 @@ Currently, two official plugins are available:
 src/
 ├── components/
 │   ├── shared/
-│   │   ├── Button/
-│   │   ├── Input/
-│   │   ├── Table/
-│   │   └── ...
+│   │   ├── AppBarCustom.tsx
+│   │   ├── DraweCustom.tsx
+│   │   ├── listItems.tsx
+│   │   └── Agregar componenetes que se comparten...
+│   │
 │   ├── docentes/
 │   │   └── SpecificComponentForDirector/
 │   ├── generaciones/
 │   │   └── SpecificComponentForTeachers/
 │   └── studiantes/
 │       └── SpecificComponentForStudents/
+│
 ├── pages/
 │   ├── DC-docentesDashboard/
 │   │   └── index.tsx
@@ -30,9 +32,13 @@ src/
 │   │   └── index.tsx
 │   └── DC-estudiantesDashboard/
 │       └── index.tsx
+│
+├── services/
+│   ├── api.ts
+│
 ├── utils/
-│   ├── validators.ts
 │   └── helpers.ts
+│
 ├App.tsx
 ├main.tsx
 

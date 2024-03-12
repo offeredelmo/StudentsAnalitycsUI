@@ -8,9 +8,9 @@ import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
 
 import { CssBaseline } from '@mui/material';
-import { LogIn } from './pages/LogIn.tsx';
+import { LogIn } from './pages/inicio/LogIn.tsx';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
-import { SignIn } from './pages/SignIn.tsx';
+import { SignIn } from './pages/inicio/SignIn.tsx';
 import {App} from './App.tsx'
 const darkTheme = createTheme({
   palette: {
@@ -28,7 +28,6 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
           <Route path="/" element={<LogIn />} />
           <Route path="/sigin" element={<SignIn />} />
           <Route path="/dashboard" element={<App/>} />
-
         </Routes>
       </BrowserRouter>
     </ThemeProvider>
