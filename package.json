@@ -15,9 +15,13 @@
     "@fontsource/roboto": "^5.0.12",
     "@mui/icons-material": "^5.15.12",
     "@mui/material": "^5.15.12",
+    "@mui/x-data-grid": "^6.19.6",
+    "chart.js": "^4.4.2",
     "react": "^18.2.0",
+    "react-chartjs-2": "^5.2.0",
     "react-dom": "^18.2.0",
-    "react-router-dom": "^6.22.3"
+    "react-router-dom": "^6.22.3",
+    "recharts": "^2.12.2"
   },
   "devDependencies": {
     "@types/react": "^18.2.64",

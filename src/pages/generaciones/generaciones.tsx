@@ -1,9 +1,9 @@
 import { Box } from "@mui/material"
-import AppBarCustom from "./components/shared/AppBarCustom"
-import DrawerCustom from "./components/shared/DraweCustom"
+import AppBarCustom from "../../components/shared/AppBarCustom"
+import DrawerCustom from "../../components/shared/DraweCustom"
 import { useState } from "react";
 
-export const App = () => { // Recibe TableComponent como una prop
+export const App2 = ({ TableComponent }) => { // Recibe TableComponent como una prop
 
   const [open, setOpen] = useState(true); // Estado para controlar la apertura del Drawer
 
@@ -16,7 +16,7 @@ export const App = () => { // Recibe TableComponent como una prop
       <AppBarCustom open={open} toggleDrawer={toggleDrawer}></AppBarCustom>
       <DrawerCustom open={open} toggleDrawer={toggleDrawer}></DrawerCustom>
       <Box paddingTop={8} sx={{ flexGrow: 1, overflow: 'auto' }}>
-    
+        <TableComponent></TableComponent>
       </Box>
     </Box>
   )
