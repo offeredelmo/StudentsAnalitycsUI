@@ -1,8 +1,9 @@
-import * as React from 'react';
 import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
+import { Button, TextField } from '@mui/material';
+import {Dropzone} from '../../DropZoneModal';
+import { useCallback, useState } from 'react';
 
 const style = {
   position: 'absolute' as 'absolute',
@@ -16,10 +17,14 @@ const style = {
   p: 4,
 };
 
-export const BasicModal = ({open, handleClose}) => {
-  
+export const BasicModal = ({ open, handleClose, matriculas }) => {
 
 
+   //logica para obtener la data de los archivos subidos
+   const [files, setFiles] = useState([]);
+
+
+   
   return (
     <div>
       <Modal
@@ -30,11 +35,36 @@ export const BasicModal = ({open, handleClose}) => {
       >
         <Box sx={style}>
           <Typography id="modal-modal-title" variant="h6" component="h2">
-            Text in a modal
+              Reporte
           </Typography>
-          <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-            Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
-          </Typography>
+          <Box marginTop="3" sx={{ display: "flex", flexWrap: "wrap", justifyItems: "center", alignItems: "center"}}>
+
+
+            <br />
+
+            <TextField
+              required
+              id="outlined-required"
+              label="Titulo"
+              defaultValue=" "
+              sx={{width:"100%", marginTop:3}}
+            />
+            <br />
+            <TextField
+              id="outlined-multiline-static"
+              label="Descripccion"
+              multiline
+              rows={4}
+              defaultValue=" "
+              sx={{width:"100%", marginTop:3}}
+
+            />
+            <br />
+            <Dropzone setFiles={setFiles} files={files}></Dropzone>
+            <Button variant="outlined" sx={{marginRight:3}}>generar</Button>
+            <Button variant="outlined" color='error'>Cancelar</Button>
+
+          </Box>
         </Box>
       </Modal>
     </div>

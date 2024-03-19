@@ -11,10 +11,10 @@ import { CssBaseline } from '@mui/material';
 import { LogIn } from './pages/inicio/LogIn.tsx';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import { SignIn } from './pages/inicio/SignIn.tsx';
-import {App} from './App.tsx'
-import { EstudiantesDashboard } from './pages/estudiantes/EstudiantesDashboard.tsx';
 import { EstudiantesMain } from './pages/estudiantes/EstudiantesMain.tsx';
-import { EstudiantesInformcaion } from './pages/estudiantes/EstudiantesInformacion.tsx';
+import { Dashboard } from './pages/Dashboard.tsx';
+import { App } from './App.tsx';
+import { EstudianteDashboard } from './pages/estudiantes/EstudianteDashboard.tsx';
 
 
 
@@ -39,7 +39,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/",
-    element: <EstudiantesDashboard/>,
+    element: <Dashboard/>,
     children: [
       {
         path: "estudiantes/main",
@@ -47,7 +47,7 @@ const router = createBrowserRouter([
       },
       {
         path: "estudiantes/informacion",
-        element: <EstudiantesMain/>,
+        element: <EstudianteDashboard/>,
       },
     ]
   },

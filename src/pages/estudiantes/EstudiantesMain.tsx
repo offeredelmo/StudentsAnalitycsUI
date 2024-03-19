@@ -1,7 +1,7 @@
 import { Box, Breadcrumbs, Typography } from "@mui/material"
 import { ToolBarEstudents } from "../../components/shared/estudiantes/ToolBarEstudents"
 import { TableEstudents } from "../../components/shared/estudiantes/TableEstudents"
-import { useState } from "react";
+import { useCallback, useState } from "react";
 import { BasicModal } from "../../components/shared/estudiantes/ModalReport";
 
 export interface estudent{
@@ -117,7 +117,9 @@ export const EstudiantesMain = () => {
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
 
+   
 
+    
     return(
         <Box padding={2} paddingTop='5vh' sx={{flexGrow: 1, overflow: 'auto'}}>
                 <Typography variant="h3">Estudiantes </Typography>
@@ -127,7 +129,7 @@ export const EstudiantesMain = () => {
                 </Breadcrumbs>
                 <ToolBarEstudents onGenerateReport={handleGenerateReport} estudents={estudents} ></ToolBarEstudents>
                 <TableEstudents onMatriculaSelect={handleSelectMatricula}  selectedMatriculas={selectedMatriculas} estudents={estudents}></TableEstudents>
-                <BasicModal open={open} handleClose={handleClose} ></BasicModal>
+                <BasicModal open={open} handleClose={handleClose} matriculas={selectedMatriculas}></BasicModal>
         </Box>
     )
 }

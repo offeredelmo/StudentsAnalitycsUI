@@ -1,13 +1,13 @@
 import { Box} from "@mui/material"
-import DrawerCustom from "../../components/shared/DraweCustom"
 import { useState } from "react"
-import AppBarCustom from "../../components/shared/AppBarCustom"
 import { Outlet } from "react-router-dom"
+import AppBarCustom from "../components/shared/AppBarCustom";
+import DrawerCustom from "../components/shared/DraweCustom";
 
 
 
 
-export const EstudiantesDashboard = () => {
+export const Dashboard = () => {
     const [open, setOpen] = useState(true); // Estado para controlar la apertura del Drawer
 
     const toggleDrawer = () => {
