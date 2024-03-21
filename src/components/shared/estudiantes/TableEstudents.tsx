@@ -1,7 +1,8 @@
-import {  Avatar, Chip, IconButton, Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Checkbox } from "@mui/material"
+import { Avatar, Chip, IconButton, Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Checkbox } from "@mui/material"
 import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined';
 import StarBorderIcon from '@mui/icons-material/StarBorder';
 import GradeIcon from '@mui/icons-material/Grade';
+import { Link } from "react-router-dom";
 
 
 
@@ -18,16 +19,16 @@ const selectColor = (estatus) => {
     if (lowerCaseEstatus === "inscrito") { return "success"; }
     if (lowerCaseEstatus === "baja definitiva") { return "error"; }
     if (lowerCaseEstatus === "baja academica") { return "warning"; }
-    if (lowerCaseEstatus === "titulado") { return "primary"; } 
-    return "default"; 
+    if (lowerCaseEstatus === "titulado") { return "primary"; }
+    return "default";
 }
 
 
 const favorite = (favorito) => {
     if (favorito) {
-        return <GradeIcon />; 
+        return <GradeIcon />;
     } else {
-        return <StarBorderIcon />; 
+        return <StarBorderIcon />;
     }
 }
 
@@ -39,7 +40,7 @@ export const TableEstudents = ({ onMatriculaSelect, selectedMatriculas, estudent
 
     return (
         <>
-            <TableContainer component={Paper} sx={{height:'79vh', marginTop:'2vh'}}>
+            <TableContainer component={Paper} sx={{ height: '79vh', marginTop: '2vh' }}>
                 <Table>
                     <TableHead >
                         <TableRow >
@@ -61,8 +62,8 @@ export const TableEstudents = ({ onMatriculaSelect, selectedMatriculas, estudent
                                     <TableRow key={estuden.matricula} hover>
                                         <TableCell >
                                             <Checkbox
-                                                  onChange={(event) => handleSelect(event, estuden.matricula)}
-                                                  checked={selectedMatriculas.includes(estuden.matricula)}
+                                                onChange={(event) => handleSelect(event, estuden.matricula)}
+                                                checked={selectedMatriculas.includes(estuden.matricula)}
                                             />
                                             {estuden.matricula}
                                         </TableCell>
@@ -77,14 +78,17 @@ export const TableEstudents = ({ onMatriculaSelect, selectedMatriculas, estudent
                                         </TableCell>
                                         <TableCell>{estuden.rezago ? "si" : "no"}</TableCell>
                                         <TableCell>
-                                            <IconButton aria-label="informacion">
-                                                < InfoOutlinedIcon />
-                                            </IconButton>
+                                            <Link to={`/director/estudiantes/${estuden.matricula}`}>
+                                                <IconButton aria-label="informacion">
+                                                    < InfoOutlinedIcon />
+                                                </IconButton>
+                                            </Link>
                                         </TableCell>
                                         <TableCell>
                                             <IconButton aria-label="favorito">
                                                 {favorite(estuden.favorito)}
                                             </IconButton>
+
                                         </TableCell>
 
                                     </TableRow>
