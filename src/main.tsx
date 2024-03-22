@@ -1,8 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import { BrowserRouter, Routes, Route, RouterProvider, createBrowserRouter } from 'react-router-dom';
-
-
+import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 
 
 import '@fontsource/roboto/300.css';
@@ -14,10 +12,15 @@ import { CssBaseline } from '@mui/material';
 import { LogIn } from './pages/inicio/LogIn.tsx';
 import { ThemeProvider, createTheme } from '@mui/material';
 import { SignIn } from './pages/inicio/SignIn.tsx';
-import {App} from './App.tsx'
+import { App } from './App.tsx'
 import { Busqueda } from './components/docentes/Busqueda.tsx';
 import { DocentesDashboard } from './pages/DC-Docentes/DocentesDashboard.tsx';
 import InformacionDocente from './components/docentes/InformacionDocente.tsx';
+
+import { EstudiantesMain } from './pages/estudiantes/EstudiantesMain.tsx';
+import { Dashboard } from './pages/Dashboard.tsx';
+import { EstudianteDashboard } from './pages/estudiantes/EstudianteDashboard.tsx';
+
 const darkTheme = createTheme({
   palette: {
     mode: 'light',//se puede usar 'light'
@@ -27,30 +30,47 @@ const darkTheme = createTheme({
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <LogIn/>,
+    element: <LogIn />,
   },
   {
     path: "/sigin",
-    element: <SignIn/>,
+    element: <SignIn />,
   },
   {
     path: "/dev",
-    element: <App/>,
+    element: <App />,
   },
   {
-    path: "/",
-    element: <DocentesDashboard/>,
+
+    path: "/director/",
+    element: <Dashboard />,
     children: [
       {
-        path: "docentes/main",
-        element: <Busqueda/>,
+        path: "estudiantes/main",
+        element: <EstudiantesMain />,
       },
       {
-        path: "docentes/informacion",
-        element: <InformacionDocente/>,
+        path: "estudiantes/:id",
+        element: <EstudianteDashboard />,
+
       },
     ]
   },
+  {
+    path: "/docentes/",
+    element: <DocentesDashboard />,
+    children: [
+      {
+        path: "docentes/main",
+        element: <Busqueda />,
+      },
+      {
+        path: "docentes/informacion",
+        element: <InformacionDocente />,
+
+      }
+    ]
+  }
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
