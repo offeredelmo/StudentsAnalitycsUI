@@ -5,7 +5,6 @@ import GradeIcon from '@mui/icons-material/Grade';
 import { Link } from "react-router-dom";
 
 
-
 const tableHead: string[] = [
     "Matricula",
     "Nombre",

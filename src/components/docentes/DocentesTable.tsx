@@ -76,9 +76,11 @@ export const TableDocentes = () => {
                                         </TableCell>
                                         <TableCell>{docentes.grupos}</TableCell>
                                         <TableCell>
+                                        <Link to="/docentes/docentes/informacion">
                                             <IconButton aria-label="informacion">
                                                 <InfoOutlinedIcon/>
-                                            </IconButton> <Link to="/docentes/informacion">hola </Link>
+                                            </IconButton>
+                                             </Link>
                                         </TableCell>
                                     </TableRow>
                                 )

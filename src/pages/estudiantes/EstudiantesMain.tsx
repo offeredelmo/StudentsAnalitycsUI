@@ -45,7 +45,7 @@ export interface estudent{
     }
 } 
 
-const estudents: estudent[] = [
+export const estudents: estudent[] = [
     { 
         matricula: "211099",
         nombre: "mario alfredo",
