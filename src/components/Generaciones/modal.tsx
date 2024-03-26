@@ -5,6 +5,7 @@ import Reporte from './reporte';
 import Imformacion from './informacion';
 import { useMediaQuery } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
+import Tab from './tab';
 
 const ModalComponent = ({ open, handleClose }) => {
     const theme = useTheme();
@@ -24,7 +25,7 @@ const ModalComponent = ({ open, handleClose }) => {
             case 'reports':
                 return <Reporte/>; // Agrega otros casos según sea necesario
             case 'tab':
-                return <Typography variant="body1">Aquí va el contenido de TAB</Typography>; // Agrega otros casos según sea necesario
+                return <Tab/> 
             default:
                 return null;
         }
