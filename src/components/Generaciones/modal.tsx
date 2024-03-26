@@ -23,7 +23,7 @@ const ModalComponent = ({ open, handleClose }) => {
             case 'info':
                 return <Imformacion/>; 
             case 'reports':
-                return <Reporte/>; // Agrega otros casos según sea necesario
+                return <Reporte/>; 
             case 'tab':
                 return <Tab/> 
             default:
@@ -45,7 +45,6 @@ const ModalComponent = ({ open, handleClose }) => {
                     marginLeft: isMobile ? '0%' : '50%',
                     maxHeight: '100vh',
                     overflowY: 'auto',
-                    padding: '20px',
                 }}>
                     <Box sx={{ display: 'flex', justifyContent: 'space-around', marginBottom: '20px' }}>
                         <Box
@@ -97,7 +96,7 @@ const ModalComponent = ({ open, handleClose }) => {
                         <CloseIcon />
                     </IconButton>
                 
-                    {renderContent()} {/* Renderiza el contenido seleccionado */}
+                    {renderContent()}
                     
                 </Paper>
             </Box>

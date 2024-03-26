@@ -61,7 +61,7 @@ const router = createBrowserRouter([
       },
       {
         
-          path: "/generaciones",
+          path: "generaciones",
           element:<App2 TableComponent={TableComponent} />,
       
         

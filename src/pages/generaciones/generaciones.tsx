@@ -13,8 +13,7 @@ export const App2 = ({ TableComponent }) => { // Recibe TableComponent como una 
   
   return (
     <Box sx={{ display: 'flex' }}>
-      <AppBarCustom open={open} toggleDrawer={toggleDrawer}></AppBarCustom>
-      <DrawerCustom open={open} toggleDrawer={toggleDrawer}></DrawerCustom>
+      
       <Box paddingTop={8} sx={{ flexGrow: 1, overflow: 'auto' }}>
         <TableComponent></TableComponent>
       </Box>
