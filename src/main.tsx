@@ -1,6 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import { BrowserRouter, Routes, Route, createBrowserRouter,RouterProvider } from 'react-router-dom';
+import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+
 
 import '@fontsource/roboto/300.css';
 import '@fontsource/roboto/400.css';
@@ -9,35 +10,79 @@ import '@fontsource/roboto/700.css';
 
 import { CssBaseline } from '@mui/material';
 import { LogIn } from './pages/inicio/LogIn.tsx';
-import { ThemeProvider, createTheme } from '@mui/material/styles';
+import { ThemeProvider, createTheme } from '@mui/material';
 import { SignIn } from './pages/inicio/SignIn.tsx';
-import {App} from './App.tsx'
 import { App2 } from './pages/generaciones/generaciones.tsx';
 import { TableComponent } from "./components/Generaciones/generaciones";
 
+
+import { App } from './App.tsx'
+import { Busqueda } from './components/docentes/Busqueda.tsx';
+import { DocentesDashboard } from './pages/DC-Docentes/DocentesDashboard.tsx';
+import InformacionDocente from './components/docentes/InformacionDocente.tsx';
+
+import { EstudiantesMain } from './pages/estudiantes/EstudiantesMain.tsx';
+import { Dashboard } from './pages/Dashboard.tsx';
+import { EstudianteDashboard } from './pages/estudiantes/EstudianteDashboard.tsx';
+
 const darkTheme = createTheme({
   palette: {
-    mode: 'light',
+    mode: 'light',//se puede usar 'light'
   },
 });
+
+
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <LogIn/>,
+    element: <LogIn />,
   },
   {
     path: "/sigin",
-    element: <SignIn/>,
+    element: <SignIn />,
   },
   {
     path: "/dev",
-    element: <App/>,
+    element: <App />,
   },
   {
-    path: "/generaciones",
-    element:<App2 TableComponent={TableComponent} />,
 
+    path: "/director/",
+    element: <Dashboard />,
+    children: [
+      {
+        path: "estudiantes/main",
+        element: <EstudiantesMain />,
+      },
+      {
+        path: "estudiantes/:id",
+        element: <EstudianteDashboard />,
+
+      },
+      {
+        
+          path: "/generaciones",
+          element:<App2 TableComponent={TableComponent} />,
+      
+        
+      }
+    ]
   },
+  {
+    path: "/docentes/",
+    element: <DocentesDashboard />,
+    children: [
+      {
+        path: "docentes/main",
+        element: <Busqueda />,
+      },
+      {
+        path: "docentes/informacion",
+        element: <InformacionDocente />,
+
+      }
+    ]
+  }
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
@@ -45,6 +90,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
     <ThemeProvider theme={darkTheme}>
       <CssBaseline></CssBaseline>
       <RouterProvider router={router}></RouterProvider>
-          </ThemeProvider>
+      </ThemeProvider>
   </React.StrictMode>,
+
 )
