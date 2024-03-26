@@ -8,7 +8,8 @@ import TextField from '@mui/material/TextField';
 import Typography from '@mui/material/Typography';
 import ModalComponent from './modal';
 import { Box } from '@mui/material';
-
+import Imformacion from './informacion';
+import Reporte from './reporte';
 const columns: GridColDef[] = [
   { field: 'generacion', headerName: 'Generación', width: 150 },
   { field: 'fechaIngreso', headerName: 'Fecha de Ingreso', width: 200 },
@@ -70,7 +71,10 @@ export const TableComponent = () => {
           checkboxSelection
         />
       </div>
-      <ModalComponent open={openModal} handleClose={handleCloseModal} /> {/* Renderiza el modal */}
+      {/*<ModalComponent open={openModal} handleClose={handleCloseModal} Contenido={Imformacion} /> */}
+      <ModalComponent open={openModal} handleClose={handleCloseModal} Contenido={Imformacion} /> 
+
+
     </div>
   );
 };

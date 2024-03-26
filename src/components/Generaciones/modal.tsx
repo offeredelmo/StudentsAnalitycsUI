@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { Modal, Box, Typography, Paper, IconButton } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
-import Reporte from './reportes';
+import Reporte from './reporte';
+import Imformacion from './informacion';
 import { useMediaQuery } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
 
@@ -9,10 +10,24 @@ const ModalComponent = ({ open, handleClose }) => {
     const theme = useTheme();
 
     const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
-    const [selectedTab, setSelectedTab] = useState(null);
+    const [selectedTab, setSelectedTab] = useState('info'); // Estado para manejar la pestaña seleccionada
 
     const handleTabClick = (tab) => {
         setSelectedTab(tab);
+    };
+
+    // Función para renderizar el contenido seleccionado
+    const renderContent = () => {
+        switch (selectedTab) {
+            case 'info':
+                return <Imformacion/>; 
+            case 'reports':
+                return <Reporte/>; // Agrega otros casos según sea necesario
+            case 'tab':
+                return <Typography variant="body1">Aquí va el contenido de TAB</Typography>; // Agrega otros casos según sea necesario
+            default:
+                return null;
+        }
     };
 
     return (
@@ -23,20 +38,19 @@ const ModalComponent = ({ open, handleClose }) => {
             aria-describedby="modal-description"
         >
             <Box sx={{ width: '100%', height: '100%' }}>
-            <Paper sx={{
+                <Paper sx={{
                     width: isMobile ? '100%' : '50%',
                     margin: 'auto',
                     marginLeft: isMobile ? '0%' : '50%',
                     maxHeight: '100vh',
                     overflowY: 'auto',
                     padding: '20px',
-
                 }}>
                     <Box sx={{ display: 'flex', justifyContent: 'space-around', marginBottom: '20px' }}>
                         <Box
                             sx={{
                                 display: 'inline-block',
-                                marginRight: '20px', // Agregando un margen derecho entre los elementos
+                                marginRight: '20px',
                                 '&:hover': {
                                     borderBottom: '2px solid #7EC8E3',
                                 },
@@ -51,7 +65,7 @@ const ModalComponent = ({ open, handleClose }) => {
                         <Box
                             sx={{
                                 display: 'inline-block',
-                                marginRight: '20px', // Agregando un margen derecho entre los elementos
+                                marginRight: '20px',
                                 '&:hover': {
                                     borderBottom: '2px solid #7EC8E3',
                                 },
@@ -81,7 +95,9 @@ const ModalComponent = ({ open, handleClose }) => {
                     <IconButton onClick={handleClose} sx={{ position: 'absolute', top: 0, right: 0 }}>
                         <CloseIcon />
                     </IconButton>
-                    <Reporte Paper={Paper} />
+                
+                    {renderContent()} {/* Renderiza el contenido seleccionado */}
+                    
                 </Paper>
             </Box>
         </Modal>
