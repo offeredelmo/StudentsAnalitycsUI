@@ -8,7 +8,7 @@ import List from '@mui/material/List';
 import Divider from '@mui/material/Divider';
 import IconButton from '@mui/material/IconButton';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
-import { mainListItems, secondaryListItems } from '../shared/listItems'; 
+import { MainListItems} from '../shared/listItems'; 
 
 const drawerWidth = 240;
 
@@ -53,9 +53,8 @@ const DrawerCustom: React.FC<DrawerComponentProps> = ({ open, toggleDrawer }) =>
       </Toolbar>
       <Divider />
       <List component="nav">
-        {mainListItems}
+        <MainListItems></MainListItems>
         <Divider sx={{ my: 1 }} />
-        {secondaryListItems}
       </List>
     </Drawer>
   );

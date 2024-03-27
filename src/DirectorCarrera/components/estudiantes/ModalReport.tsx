@@ -2,8 +2,8 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
 import { Button, TextField } from '@mui/material';
-import {Dropzone} from '../../DropZoneModal';
 import { useCallback, useState } from 'react';
+import Dropzone from '../../../components/shared/DropZoneModal';
 
 const style = {
   position: 'absolute' as 'absolute',

@@ -4,7 +4,7 @@ import html2pdf from 'html2pdf.js';
 import VisibilityIcon from '@mui/icons-material/Visibility';
 import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
 import Grafica from './grafica'; // Importa el componente de la gráfica
-import { CardReporte } from '../shared/estudiantes/CardReporte';
+import { CardReporte } from '../estudiantes/CardReporte';
 
 const Reporte = () => {
   

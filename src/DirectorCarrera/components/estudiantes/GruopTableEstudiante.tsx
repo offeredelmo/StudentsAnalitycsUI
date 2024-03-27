@@ -1,4 +1,4 @@
-import { estudent } from "../../../pages/estudiantes/EstudianteDashboard"
+import { estudent } from "../../pages/estudiantes/EstudianteDashboard"
 import { TableDatosPersonales } from "./Tables/TableDatosPersonales"
 import { TableDireccionActual } from "./Tables/TableDireccionActual"
 import { TableDireccionFamiliar } from "./Tables/TableDireccionFamiliar"

@@ -1,6 +1,6 @@
 import { Box } from '@mui/material';
-import AppBarCustom from '../../components/shared/AppBarCustom';
-import DrawerCustom from '../../components/shared/DraweCustom';
+import AppBarCustom from '../../../components/shared/AppBarCustom';
+import DrawerCustom from '../../../components/shared/DraweCustom';
 import { useState } from 'react';
 import { Outlet } from 'react-router-dom';
 

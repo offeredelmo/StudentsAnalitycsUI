@@ -39,7 +39,7 @@ export const TableEstudents = ({ onMatriculaSelect, selectedMatriculas, estudent
 
     return (
         <>
-            <TableContainer component={Paper} sx={{ height: '79vh', marginTop: '2vh' }}>
+            <TableContainer component={Paper} sx={{ height: '71vh', marginTop: '2vh' }}>
                 <Table>
                     <TableHead >
                         <TableRow >

@@ -2,7 +2,7 @@ import { Box, Collapse, IconButton, Table, TableBody, TableCell, TableContainer,
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import { useState } from "react";
-import { estudent } from "../../../../pages/estudiantes/EstudianteDashboard";
+import { estudent } from "../../../pages/estudiantes/EstudianteDashboard";
 
 
 

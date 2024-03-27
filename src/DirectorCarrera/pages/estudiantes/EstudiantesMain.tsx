@@ -1,8 +1,8 @@
 import { Box, Breadcrumbs, Typography } from "@mui/material"
-import { ToolBarEstudents } from "../../components/shared/estudiantes/ToolBarEstudents"
-import { TableEstudents } from "../../components/shared/estudiantes/TableEstudents"
 import { useCallback, useState } from "react";
-import { BasicModal } from "../../components/shared/estudiantes/ModalReport";
+import { BasicModal } from "../../components/estudiantes/ModalReport";
+import { ToolBarEstudents } from "../../components/estudiantes/ToolBarEstudents";
+import { TableEstudents } from "../../components/estudiantes/TableEstudents";
 
 export interface estudent{
     matricula:string,
@@ -121,7 +121,7 @@ export const EstudiantesMain = () => {
 
     
     return(
-        <Box padding={2} paddingTop='5vh' sx={{flexGrow: 1, overflow: 'auto'}}>
+        <Box padding={2} paddingTop='64px' sx={{flexGrow: 1, overflow: 'auto'}}>
                 <Typography variant="h3">Estudiantes </Typography>
                 <Breadcrumbs aria-label="breadcrumb">
                     <Typography color="text.primary">Estudiantes</Typography>

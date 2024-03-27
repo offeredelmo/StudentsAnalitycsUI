@@ -2,10 +2,9 @@ import { Box, Collapse, IconButton, Table, TableBody, TableCell, TableContainer,
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import { useState } from "react";
-import { estudent } from "../../../../pages/estudiantes/EstudianteDashboard";
+import { estudent } from "../../../pages/estudiantes/EstudiantesMain";
 
-
-export const TableTutor = ({ estudents }: { estudents: estudent[] }) => {
+export const TableDireccionFamiliar = ({ estudents }: { estudents: estudent[] }) => {
 
     // funcionamiento del despliegue de la fila informacion personal
     const [openRow, setOpenRow] = useState(false); // Estado para controlar la apertura del Drawer
@@ -15,7 +14,7 @@ export const TableTutor = ({ estudents }: { estudents: estudent[] }) => {
 
     return (
         <>
-                    <TableContainer>
+            <TableContainer>
                 <Table>
                     <TableHead>
                         <TableRow sx={{ '& > *': { borderBottom: 'unset' } }}>
@@ -27,42 +26,44 @@ export const TableTutor = ({ estudents }: { estudents: estudent[] }) => {
                                 >
                                     {openRow ? <KeyboardArrowUpIcon /> : <KeyboardArrowDownIcon />}
                                 </IconButton>
-                                <Typography display="inline-block" variant="subtitle1" >Informacion personal</Typography>
+                                <Typography display="inline-block" variant="subtitle1">Direccion Familiar</Typography>
                             </TableCell>
                         </TableRow>
                         <TableRow>
-                            <TableCell style={{ paddingBottom: 0, paddingTop: 0 }}  >
+                            <TableCell style={{ paddingBottom: 0, paddingTop: 0 }}  colSpan={2}>
                                 <Collapse in={openRow} timeout="auto" unmountOnExit>
                                         <Table size="small" aria-label="purchases">
                                             <TableBody>
                                                 <TableRow>
-                                                    <TableCell  width='50%'>Nombre</TableCell>
-                                                    <TableCell  width='50%'>{estudents[0].datosTutor.nombre}</TableCell>
-                                                </TableRow>
-                                             
-                                                <TableRow>
-                                                    <TableCell  width='50%'>Apellido Paterno</TableCell>
-                                                    <TableCell  width='50%'>{estudents[0].datosTutor.apellidoPaterno}</TableCell>
+                                                    <TableCell width='50%'>Ciudad</TableCell>
+                                                    <TableCell  width='50%'>{estudents[0].direccionFamiliar.ciudad}</TableCell>
                                                 </TableRow>
                                                 <TableRow>
-                                                    <TableCell  width='50%'>Apellido Materno</TableCell>
-                                                    <TableCell  width='50%'>{estudents[0].datosTutor.apellidoMaterno}</TableCell>
+                                                    <TableCell  width='50%'>Colonia</TableCell>
+                                                    <TableCell  width='50%'>{estudents[0].direccionFamiliar.colonia}</TableCell>
                                                 </TableRow>
                                                 <TableRow>
-                                                    <TableCell  width='50%'>Numero de telefono</TableCell>
-                                                    <TableCell  width='50%'>{estudents[0].datosTutor.numeroTelefono}</TableCell>
+                                                    <TableCell  width='50%'>Codigo Postal</TableCell>
+                                                    <TableCell  width='50%'>{estudents[0].direccionFamiliar.codigoPostal}</TableCell>
                                                 </TableRow>
                                                 <TableRow>
-                                                    <TableCell  width='50%'>Curp</TableCell>
-                                                    <TableCell  width='50%'>{estudents[0].datosPersonales.curp}</TableCell>
+                                                    <TableCell  width='50%'>Numero exterior</TableCell>
+                                                    <TableCell  width='50%'>{estudents[0].direccionFamiliar.numeroExterior}</TableCell>
                                                 </TableRow>
                                                 <TableRow>
-                                                    <TableCell  width='50%'>Sexo</TableCell>
-                                                    <TableCell  width='50%'>{estudents[0].datosPersonales.sexo}</TableCell>
+                                                    <TableCell  width='50%'>Numero Interior</TableCell>
+                                                    <TableCell  width='50%'>{estudents[0].direccionFamiliar.numeroInterior}</TableCell>
+                                                </TableRow>
+                                                <TableRow>
+                                                    <TableCell  width='50%'>Calle 1</TableCell>
+                                                    <TableCell  width='50%'>{estudents[0].direccionFamiliar.calle1}</TableCell>
+                                                </TableRow>
+                                                <TableRow>
+                                                    <TableCell  width='50%'>Calle 2</TableCell>
+                                                    <TableCell  width='50%'>{estudents[0].direccionFamiliar.calle2}</TableCell>
                                                 </TableRow>
                                             </TableBody>
                                         </Table>
-
                                 </Collapse>
                             </TableCell>
                         </TableRow>

@@ -4,13 +4,13 @@ import Tab from '@mui/material/Tab';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import { Breadcrumbs} from "@mui/material"
-import{TableEstudents} from "../shared/estudiantes/TableEstudents" 
-import { BasicModal } from '../shared/estudiantes/ModalReport';
 import { useState } from 'react';
-import { estudents } from '../../pages/estudiantes/EstudiantesMain';
-import { ToolBarEstudents } from '../shared/estudiantes/ToolBarEstudents';
 import WeeklySchedule from './HorarioDocente';
 import { DocentReporte } from './ReporteDocente';
+import { estudents } from '../../pages/estudiantes/EstudiantesMain';
+import { TableEstudents } from '../estudiantes/TableEstudents';
+import { BasicModal } from '../estudiantes/ModalReport';
+import { ToolBarEstudents } from '../estudiantes/ToolBarEstudents';
 
 
 interface TabPanelProps {

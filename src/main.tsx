@@ -9,21 +9,20 @@ import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
 
 import { CssBaseline } from '@mui/material';
-import { LogIn } from './pages/inicio/LogIn.tsx';
 import { ThemeProvider, createTheme } from '@mui/material';
-import { SignIn } from './pages/inicio/SignIn.tsx';
-import { App2 } from './pages/generaciones/generaciones.tsx';
-import { TableComponent } from "./components/Generaciones/generaciones";
+import { App2 } from './DirectorCarrera/pages/generaciones/generaciones.tsx';
 
 
-import { App } from './App.tsx'
-import { Busqueda } from './components/docentes/Busqueda.tsx';
-import { DocentesDashboard } from './pages/DC-Docentes/DocentesDashboard.tsx';
-import InformacionDocente from './components/docentes/InformacionDocente.tsx';
 
-import { EstudiantesMain } from './pages/estudiantes/EstudiantesMain.tsx';
-import { Dashboard } from './pages/Dashboard.tsx';
-import { EstudianteDashboard } from './pages/estudiantes/EstudianteDashboard.tsx';
+
+import { EstudiantesMain } from './DirectorCarrera/pages/estudiantes/EstudiantesMain.tsx';
+import { EstudianteDashboard } from './DirectorCarrera/pages/estudiantes/EstudianteDashboard.tsx';
+import { LogIn } from './User/pages/LogIn.tsx';
+import { SignIn } from './User/pages/SignIn.tsx';
+import { TableComponent } from './DirectorCarrera/components/generaciones/generaciones.tsx';
+import { Busqueda } from './DirectorCarrera/components/docentes/Busqueda.tsx';
+import InformacionDocente from './DirectorCarrera/components/docentes/InformacionDocente.tsx';
+import { Dashboard } from './Dashboard.tsx';
 
 const darkTheme = createTheme({
   palette: {
@@ -42,10 +41,6 @@ const router = createBrowserRouter([
     element: <SignIn />,
   },
   {
-    path: "/dev",
-    element: <App />,
-  },
-  {
 
     path: "/director/",
     element: <Dashboard />,
@@ -60,18 +55,9 @@ const router = createBrowserRouter([
 
       },
       {
-        
-          path: "generaciones",
-          element:<App2 TableComponent={TableComponent} />,
-      
-        
-      }
-    ]
-  },
-  {
-    path: "/docentes/",
-    element: <DocentesDashboard />,
-    children: [
+        path: "generaciones",
+        element: <App2 TableComponent={TableComponent} />,
+      },
       {
         path: "docentes/main",
         element: <Busqueda />,
@@ -82,7 +68,7 @@ const router = createBrowserRouter([
 
       }
     ]
-  }
+  },
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
@@ -90,7 +76,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
     <ThemeProvider theme={darkTheme}>
       <CssBaseline></CssBaseline>
       <RouterProvider router={router}></RouterProvider>
-      </ThemeProvider>
+    </ThemeProvider>
   </React.StrictMode>,
 
 )

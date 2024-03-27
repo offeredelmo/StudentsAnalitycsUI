@@ -1,6 +1,6 @@
 import { Autocomplete, Button, MenuItem, Stack, TextField, IconButton } from "@mui/material"
 import FilterAltIcon from '@mui/icons-material/FilterAlt';
-import { estudent } from "../../../pages/estudiantes/EstudiantesMain";
+import { estudent } from "../../pages/estudiantes/EstudiantesMain";
 
 const currencies = [
     {
